@@ -14,7 +14,7 @@ weather_form.addEventListener('submit', (event)=>{
 
     const place = weather_place.value;
     console.log(place)
-    fetch('http://localhost:3000/weather?place='+place).then((response)=>{
+    fetch('/weather?place='+place).then((response)=>{
     response.json().then((data)=>{
         if(!data[0])
             return messageOne.textContent = data[1].forecast_data+' in '+ data[1].location

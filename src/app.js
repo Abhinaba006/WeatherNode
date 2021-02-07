@@ -5,7 +5,10 @@ const utils = require('./utils/utils')
 const geo_code = utils.geo_code
 const forecast = utils.forecast
 
+
 const app = express();
+const port = process.env.PORT || 3000
+
 
 // --- define paths for express
 const public = path.join(__dirname, '../public');
@@ -86,6 +89,6 @@ app.get('*', (req, res)=>{
 })
 
 
-app.listen(3000, ()=>{
-    console.log('server is up at 3000');
+app.listen(port, ()=>{
+    console.log('server is up at '+port);
 });
